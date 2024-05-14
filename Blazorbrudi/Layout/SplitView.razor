@@ -1,14 +1,14 @@
 ﻿@namespace Blazorbrudi
 
-<div @ref="@_containerRef" class="split-container">
-    <div id="left" class="split-content--first split-content">
-        @ContentTop
+<div @ref="@_containerRef" class="@GetContainerClass()">
+    <div class="split-content--first split-content">
+        @FirstContent
     </div>
 
-    <div id="bar" class="split-bar" @onmousedown="StartResize" @onmousedown:preventDefault></div>
+    <div class="@GetSplitBarClass()" @onmousedown="StartResize" @onmousedown:preventDefault></div>
 
-    <div id="right" class="split-content--second split-content">
-        @ContentBottom
+    <div class="split-content--second split-content">
+        @SecondContent
     </div>
 </div>
 
@@ -18,10 +18,18 @@
         height: 100%;
         overflow: hidden;
     }
+    .split-container--horizontal {
+        flex-direction: column;
+    }
     .split-bar {
-        width: 5px;
         cursor: col-resize;
         background-color: #ccc;
+    }
+    .split-bar--horizontal {
+        height: 5px;
+    }
+    .split-bar--vertical {
+        width: 5px;
     }
     .split-content {
         overflow-y: auto;

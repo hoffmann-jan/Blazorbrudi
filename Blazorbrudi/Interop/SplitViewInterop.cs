@@ -12,10 +12,10 @@ internal sealed class SplitViewInterop : IAsyncDisposable
             "import", "./_content/Blazorbrudi/js/layout/split-view.js").AsTask());
     }
 
-    public async ValueTask StartResize(ElementReference containerRef)
+    public async ValueTask StartResize(ElementReference containerRef, bool resizeHorizontal)
     {
         var module = await moduleTask.Value;
-        await module.InvokeVoidAsync("startResize", containerRef);
+        await module.InvokeVoidAsync("startResize", [containerRef, resizeHorizontal]);
     }
 
     public async ValueTask DisposeAsync()
