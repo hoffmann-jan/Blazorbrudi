@@ -17,6 +17,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
-        run: dotnet build --configuration Release
+        run: dotnet build Blazorbrudi/Blazorbrudi.csproj --configuration Release
       - name: Test
-        run: dotnet test --configuration Release --no-build
+        run: dotnet test Blazorbrudi/Blazorbrudi.csproj --configuration Release --no-build
