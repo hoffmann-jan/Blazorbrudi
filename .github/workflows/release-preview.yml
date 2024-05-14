@@ -17,7 +17,7 @@ jobs:
           TAG=${{github.ref_name}}
           echo VERSION=${TAG:1} >> $GITHUB_ENV
       - name: Pack
-        run: dotnet pack --configuration Release /p:Version=${VERSION} --output .
+        run: dotnet Blazorbrudi/Blazorbrudi.csproj pack --configuration Release /p:Version=${VERSION} --output .
       - name: Push
         run: dotnet nuget push ./*.nupkg --source ${NUGET_REPOSITORY} --api-key ${NUGET_API_KEY}
         env:
