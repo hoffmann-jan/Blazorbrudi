@@ -1,0 +1,46 @@
+﻿@page "/split-view"
+
+<h3>Resizable Split View</h3>
+
+<SplitView>
+    <ContentTop>
+        <h2>Top Panel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+    </ContentTop>
+    <ContentBottom>
+        <h2>Bottom Panel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+    </ContentBottom>
+</SplitView>
+
+<SplitView>
+    <ContentTop>
+        <h2>Left Panel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+    </ContentTop>
+    <ContentBottom>
+        <h2>Right Panel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+    </ContentBottom>
+</SplitView>
+
+<h3>Resizable Split View Nested</h3>
+
+<SplitView>
+    <ContentTop>
+        <h2>Left Panel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+    </ContentTop>
+    <ContentBottom>
+        <SplitView>
+            <ContentTop>
+                <h2>Left Panel</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+            </ContentTop>
+            <ContentBottom>
+                <h2>Right Panel</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+            </ContentBottom>
+        </SplitView>
+    </ContentBottom>
+</SplitView>
