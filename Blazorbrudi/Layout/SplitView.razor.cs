@@ -2,10 +2,22 @@
 
 namespace Blazorbrudi;
 
-public partial class SplitView : IAsyncDisposable
+/// <summary>
+/// Resizeable split of two components. 
+/// </summary>
+public partial class SplitView : BlazorbrudiComponent, IAsyncDisposable
 {
+    /// <summary>
+    /// Placed top or left.
+    /// </summary>
     [Parameter] public RenderFragment FirstContent { get; init; } = null!;
+    /// <summary>
+    /// Placed bottom or right.
+    /// </summary>
     [Parameter] public RenderFragment SecondContent { get; init; } = null!;
+    /// <summary>
+    /// Changes Split direction.
+    /// </summary>
     [Parameter] public SplitMode SplitMode { get; init; } = SplitMode.Vertical;
     [Inject] internal SplitViewInterop SplitViewInterop { get; init; } = default!;
 
@@ -25,6 +37,11 @@ public partial class SplitView : IAsyncDisposable
             classes += " split-container--horizontal";
         }
 
+        if (string.IsNullOrWhiteSpace(CssClasses) is false)
+        {
+            classes += $" {CssClasses}";
+        }
+
         return classes;
     }
 
@@ -40,6 +57,7 @@ public partial class SplitView : IAsyncDisposable
         return classes;
     }
 
+    /// <inheritdoc />
     public async ValueTask DisposeAsync()
     {
         await SplitViewInterop.DisposeAsync();
