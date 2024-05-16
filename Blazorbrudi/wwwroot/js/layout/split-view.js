@@ -18,11 +18,11 @@ function handleMouseMove(e) {
     if (isResizing) {
         const containerRect = container.getBoundingClientRect();
         if (resizeHorizontal) {
-            const newHeight = Math.min(e.clientY - containerRect.top, container.height);
+            const newHeight = Math.min(e.clientY - containerRect.top, container.style.height);
             leftPanel.style.height = newHeight + 'px';
             rightPanel.style.height = (containerRect.height - newHeight - splitBar.offsetHeight) + 'px';
         } else {
-            const newWidth = Math.min(e.clientX - containerRect.left, container.width);
+            const newWidth = Math.min(e.clientX - containerRect.left, container.style.width);
             leftPanel.style.width = newWidth + 'px';
             rightPanel.style.width = (containerRect.width - newWidth - splitBar.offsetWidth) + 'px';
         }
