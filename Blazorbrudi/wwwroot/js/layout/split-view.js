@@ -18,13 +18,17 @@ function handleMouseMove(e) {
     if (isResizing) {
         const containerRect = container.getBoundingClientRect();
         if (resizeHorizontal) {
-            const newHeight = Math.min(e.clientY - containerRect.top, container.style.height);
-            leftPanel.style.height = newHeight + 'px';
-            rightPanel.style.height = (containerRect.height - newHeight - splitBar.offsetHeight) + 'px';
+            const newHeight = e.clientY - containerRect.top;
+            // Ensure that newWidth is within the bounds of the container
+            const clampedHeight = Math.min(Math.max(newHeight, 0), containerRect.height - splitBar.offsetHeight);
+            leftPanel.style.height = clampedHeight + 'px';
+            rightPanel.style.height = (containerRect.height - clampedHeight - splitBar.offsetHeight) + 'px';
         } else {
-            const newWidth = Math.min(e.clientX - containerRect.left, container.style.width);
-            leftPanel.style.width = newWidth + 'px';
-            rightPanel.style.width = (containerRect.width - newWidth - splitBar.offsetWidth) + 'px';
+            const newWidth = e.clientX - containerRect.left;
+            // Ensure that newWidth is within the bounds of the container
+            const clampedWidth = Math.min(Math.max(newWidth, 0), containerRect.width - splitBar.offsetWidth);
+            leftPanel.style.width = clampedWidth + 'px';
+            rightPanel.style.width = (containerRect.width - clampedWidth - splitBar.offsetWidth) + 'px';
         }
     }
 }
