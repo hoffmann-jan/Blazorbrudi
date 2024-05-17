@@ -1,0 +1,55 @@
+﻿@page "/split-view"
+
+<h3>Resizable Split View</h3>
+
+<SplitView>
+    <FirstContent>
+        <h2>Top Panel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+    </FirstContent>
+    <SecondContent>
+        <h2>Bottom Panel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+    </SecondContent>
+</SplitView>
+
+<SplitView>
+    <FirstContent>
+        <h2>Left Panel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+    </FirstContent>
+    <SecondContent>
+        <h2>Right Panel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+    </SecondContent>
+</SplitView>
+
+<h3>Resizable Split View Nested</h3>
+
+<SplitView>
+    <FirstContent>
+        <h2>Left Panel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+    </FirstContent>
+    <SecondContent>
+        <SplitView SplitMode="SplitMode.Horizontal">
+            <FirstContent>
+                <h2>Left Panel</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+            </FirstContent>
+            <SecondContent>
+                <h2>Right Panel</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut justo vitae metus lacinia venenatis vel ut arcu.</p>
+            </SecondContent>
+        </SplitView>
+    </SecondContent>
+</SplitView>
+
+<style>
+    .split-content--first {
+        background-color: lightgreen;
+    }
+    .split-content--second {
+        background-color: lightsalmon;
+    }
+</style>

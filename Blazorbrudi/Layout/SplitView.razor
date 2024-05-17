@@ -1,0 +1,46 @@
+﻿@namespace Blazorbrudi
+@inherits BlazorbrudiComponent
+
+<div @ref="@_containerRef" class="@GetContainerClass()">
+    <div class="split-content--first split-content">
+        @FirstContent
+    </div>
+
+    <div class="@GetSplitBarClass()" @onmousedown="StartResize" @onmousedown:preventDefault></div>
+
+    <div class="split-content--second split-content">
+        @SecondContent
+    </div>
+</div>
+
+<style>
+    .split-container {
+        display: flex;
+        height: 100%;
+        overflow: hidden;
+    }
+    .split-container--horizontal {
+        flex-direction: column;
+    }
+    .split-bar {
+        cursor: col-resize;
+    }
+    .split-bar--horizontal {
+        cursor: row-resize;
+        min-height: 0.375rem;
+        height: 0.375rem;
+    }
+    .split-bar--vertical {
+        min-width: 0.375rem;
+        width: 0.375rem;
+    }
+    .split-content {
+        overflow: auto;
+    }
+    .split-content--first {
+        background-color: transparent;
+    }
+    .split-content--second {
+        background-color: transparent;
+    }
+</style>

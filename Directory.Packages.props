@@ -3,6 +3,7 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
+    <PackageVersion Include="Blazorbrudi" Version="1.0.0-preview20240516.1" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.4" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.4" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.4" />

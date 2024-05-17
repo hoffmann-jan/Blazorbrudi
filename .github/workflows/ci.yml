@@ -1,0 +1,22 @@
+run-name: contineous integration after push from ${{ github.actor }}
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: codebrudi42/codebrudi-dotnet-build:latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build
+        run: dotnet build Blazorbrudi/Blazorbrudi.csproj --configuration Release
+      - name: Test
+        run: dotnet test Blazorbrudi/Blazorbrudi.csproj --configuration Release --no-build
