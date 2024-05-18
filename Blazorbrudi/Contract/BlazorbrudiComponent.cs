@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-
-namespace Blazorbrudi;
+﻿namespace Blazorbrudi;
 
 public class BlazorbrudiComponent : ComponentBase
 {
