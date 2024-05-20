@@ -8,4 +8,23 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
   </ItemGroup>
 
+  <!-- NuGet -->
+  <PropertyGroup>
+      <PackageId>Blazorbrudi</PackageId>
+      <Title>Blazorbrudi by Codebrudi</Title>
+      <Authors>Codebrudi</Authors>
+      <Company>Codebrudi</Company>
+      <Description>Blazor Component Library.</Description>
+      <Copyright>Codebrudi $([System.DateTime]::UtcNow.Year)</Copyright>
+      <PackageProjectUrl>https://github.com/hoffmann-jan/Blazorbrudi</PackageProjectUrl>
+      <RepositoryType>git</RepositoryType>
+      <PackageTags>Codebrudi;Blazorbrudi;Blazor;Razor</PackageTags>
+      <PackageLicenseUrl>https://github.com/hoffmann-jan/Blazorbrudi/blob/main/LICENSE</PackageLicenseUrl>
+      <PackageReadmeFile>readme.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+      <None Include="readme.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+  <!-- NuGet END -->
+
 </Project>
